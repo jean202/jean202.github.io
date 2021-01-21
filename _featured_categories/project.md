@@ -6,5 +6,5 @@ menu: true
 submenu: false
 order: 3
 description: >
-  인공지능 프로젝트
+  웹 어플리케이션 개발 프로젝트
 ---

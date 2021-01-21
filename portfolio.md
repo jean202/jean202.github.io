@@ -10,115 +10,81 @@ order: 1
 <span style=
 "font-size:170%;
 font-weight:bold">
-김현우
+김진하
 </span>
 </center>
 
-<center>MAJOR : AI EENGINEERING</center>
+<center>MAJOR : COMPUTER SCIENCE</center>
 
-<center>Korean University</center>
-
-<center>145, Anam-ro, Seongbuk-gu, Seoul, Republic of Korea</center>
+<center>Korea National Open University</center>
 
 ## Personal Data
 ---
-> 1995.11.4 대한민국,서울특별시,동작구 출생
+> 1991.3.25 대한민국,대전광역시 출생
 
-> 연락처: khw11044@gmail.com
+> 연락처: hb13pud731@gmail.com
 
-> Github : <a href="https://github.com/khw11044">https://github.com/khw11044</a>
+> Github : <a href="https://github.com/jean202">https://github.com/jean202</a>
 
 
 ## Education
 ---
-> Mar.2015 ~ Feb.2021 한성대학교
+> Mar.2010 ~ Feb.2011 명지대학교
 >
-> IT 융합공학부 (DIVISION OF IT CONVERGENCE ENGINEERING)
+> 행정학과 중퇴
 
-> Feb.2021 ~ 현재 : 고려대학교
+> Mar.2016 ~ Aug.2020 한국방송통신대학교
 >
-> 인공지능 대학원 (이성한 교수님 연구실)
+> 컴퓨터과학과
 
 
 ## Research Interest
 ---
-
-* Computer Vision
-    + image Object Detection
-    + Vot
-    + Semantic/Instance Segmentation
-    + Super Resolution
 
 * Machine Learning / Deep Learning
     + GAN
     + Few-Shot Learning
     + Meta Learning
 
+* Blockchain
+    + Smart Contract
+    + Dapp
+    + Solidity
+    + De-fi
+
 ## Project
 ---
 
-* **Visual Object Tracking Using Plenoptic Image Sequences**
+* **TeamCal**
 
-과학기술정보통신부-한성대 프로젝트 : 학부생 인턴
+목표가 같은 구성원들이 원하는 스터디에 가입하여 스터디 일정을 캘린더를 통해 그룹원들끼리 공유하여 단,장기간 등 기간별/목적별로 사용할 수 있는 웹 어플리케이션
 
-Lightfield 영상에서의 Siamease Network를 이용한 단일 객체 추적
+* **FoodCourt**
 
-* **FPV Swlf-driving RC Car**
+음식을 주문해 조리시간이 지나면 주문한 음식을 받을 수 있는 프로그램, Oracle DB와 Java Swing을 이용해 MVC모델1로 진행
 
-VR 헤드셋을 통해 FPV 카메라에서 보내는 실시간 영상을 받으며 일반인들에게 조금더 쉽고 안전하게 자율주행을 체험해보는 프로젝트 수행
+* **InfoGames**
 
-* **Anti Drone AI Robot using object detection**
+모바일 게임 순위 open API를 가져와서 메인 페이지에서 게임 순위를 보여주고, 팁/리뷰/자유게시판등 3개의 게시판을 갖고 있는 웹 어플리케이션을 구축하는 프로젝트, jsp/Oracle/Servlet으로 MVC모델2로 진행
 
-SSD를 활용한 드론 탐지프로그램으로 라즈베리파이와 3D프린터를 이용해 만든 로봇이 드론을 인식하고 pan and tilt모터 체계를 이용하여 드론 트래킹
+* **JeongStjdyCafe**
 
-* **AI Mashroom Classificator App**
-
-mobileNet을 이용한 classification으로 버섯을 구별해주는 인공지능 버섯 도감 어플로서 독버섯 채취 및 섭취 방지를 위한 어플
+SpringFramework3.0과 Oracle, JavaScript등을 활용해 만든 스터디 카페 안내 웹 어플리케이션으로 구글맵 API를 활용하여 스터디카페의 위치 정보를 안내하고, 도로명주소 API를 활용해 회원가입 시 주소를 입력하도록 제작 
 
 ## Awards
 ---
-
-<u><strong><a href="https://www.youtube.com/watch?v=-ofj2vTvH0Q/">**The 15th HANSUNG Engineering Competitive Exhibition[PM] 2019 </a></strong></u>
-
-- BRONZE PRIZE, SPONSOR PRIZE
-
-<u><strong><a href="https://www.youtube.com/watch?v=5rFu7Kv_DfY&t=362s">**HANSUNG UNIVERSICY C&C FESTIVAL[PM] 2020</a></strong></u>
-
-- BRONZE PRIZE
-
-
-<a herf="https://www.youtube.com/watch?v=Mn9Dx5xukcg&t=10s"><u><strong>**The 16th HANSUNG Engineering Competitive Exhibition[PM] 2020</strong></u></a>
-
-- SILVER PRIZE , - BRONZE PRIZE
-
-<a herf="https://www.youtube.com/watch?v=ah9MZQ0PjMI&t=60s"><u><strong>2020년 공개SW 개발자 대회(주최:과학기술정보통신부, 주관:정보통신산업진흥원) [PM] 2020</strong></u></a>
-
-<a herf="https://blog.naver.com/khw11044/222152408161">BRONZE PRIZE</a>
-
-## Work Experiences
----
--2020. 07 – 2020. 11 Visual Object Tracking Using Plenoptic Image Sequences, 
-
-Hansung Univ – ETRI
-
-<a herf="https://github.com/khw11044/PlenOpticVot_Siamfc_2020">https://github.com/khw11044/PlenOpticVot_Siamfc_2020</a>
+교내 소프트웨어 경진대회 장려상
 
 
 ## Skills and Certification
 ---
--Language : Python, C/C++
+-Language : Java, JavaScript
 
--FrameWork: Pytorch, Tensorflow(Keras)
+-FrameWork: Spring Framework, SpringBoot, VueJs
 
--Certification : CCNA, Internet of Things Knowledge Certification
+-Certification : Engineer Information Processing
 
-## Patents
----
-【발명의 영문명칭】: Image-based anti-drone detection device and metohd using deep learning model
 
-【출원번호】: 10-2020-0080646
-
-【출원인】: 김현우, 김태현, 제진명
 
 
 

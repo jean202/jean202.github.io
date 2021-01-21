@@ -15,12 +15,12 @@ mnwt:
 
   # This photo will be used in the about section
   picture:
-    src:             /assets/img/me1.jpg
+    src:             /assets/img/me.jpg
     # srcset is optional, but can be used to provide higher res versions for retina displays
     srcset:
       # 모바일 환경에서 보이는 이미지
-      1x:            /assets/img/me1.jpg
-      2x:            /assets/img/me1.jpg
+      1x:            /assets/img/me.jpg
+      2x:            /assets/img/me.jpg
 
   # Social media icons in sidebar
   # Comment/uncommet to show/hide

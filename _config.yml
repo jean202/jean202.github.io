@@ -2,7 +2,7 @@
 #  User configuration
 # -----------------------------------------------------------------------------
 
-title:               리스너의 블로그
+title:               mnwt
 
 # The unique resource location of your page.
 # Set to `https://<username>.github.io` when hosting on GitHub Pages
@@ -13,20 +13,20 @@ url:                 https://jean202.github.io
 baseurl:             ""
 
 # A very short description of your page
-tagline:             "리스너의 블로그"
+tagline:             "이것저것 주워듣고 발아들여보는 리스너의 블로그"
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  리스너의 블로그입니다.
+  정보의 수용과 재창조를 꿈꾸는 리스너의 블로그입니다.
 
 # This should be the same author as first entry in `_data/authors.yml`
-author:
+mnwt:
   name:              Jinha Kim
   email:             anowheretogo@naver.com
 
 # Fallback image and color
-image:               /assets/img/main_left.JPG
+image:               /assets/img/sidebar_bg.JPG
 color:               '#4f86aa'
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
@@ -57,7 +57,7 @@ copyright:           '&copy; 2021.1. by 리스너'
 permalink:           
 
 # Pagination configuration (used by the `blog` layout)
-paginate:            3
+paginate:            5
 paginate_path:       '/page-:num/'
 
 # If you are upgrading form a v5 verison of Hydejack, uncomment the two lines below,
