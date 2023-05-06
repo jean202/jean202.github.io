@@ -13,12 +13,12 @@ url:                 https://jean202.github.io
 baseurl:             ""
 
 # A very short description of your page
-tagline:             "이것저것 주워듣고 발아들여보는 리스너의 블로그"
+tagline:             "천천히 꾸준하게"
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  정보의 수용과 재창조를 꿈꾸는 리스너의 블로그입니다.
+  개발 못놓는 개발자
 
 # This should be the same author as first entry in `_data/authors.yml`
 mnwt:
@@ -51,7 +51,7 @@ disqus: True
 disqus_shortname:    xxxx
 
 # This text will appear in the footer of every page. Markdown enabled.
-copyright:           '&copy; 2021.1. by 리스너'
+copyright:           '&copy; 2021.1. by jean202'
 
 # Format of the permalinks
 permalink:           
