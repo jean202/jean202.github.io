@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Algorithm] todolist"
+title:  "[Algorithm] 0509~ todolist"
 subtitle:   "정리하고 넘어가야 할 내용들"
 categories: study
 tags: algorithm
