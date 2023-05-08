@@ -27,7 +27,7 @@ mnwt:
 
 # Fallback image and color
 image:               /assets/img/sidebar_bg.JPG
-# color:               '#4f86aa'
+color:               '#00ff0000'
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
 font_heading:        "'Merriweather-Light','Lato','-apple-system','Verdana','PingFang SC','Helvetica Neue','Arial','Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei','sans-serif'"
@@ -102,6 +102,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-redirect-from
+  - jekyll-gist
+  - jemoji
+  - jekyll-include-cache
 
 exclude:
   - README.md
