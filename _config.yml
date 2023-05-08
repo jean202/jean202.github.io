@@ -26,7 +26,7 @@ mnwt:
   email:             anowheretogo@naver.com
 
 # Fallback image and color
-image:               /assets/img/sidebar_bg.JPG
+image:               /assets/img/sidebar_bg.jpg
 color:               '#00ff0000'
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
