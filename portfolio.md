@@ -69,7 +69,22 @@ font-weight:bold">
 
 * **JeongStjdyCafe**
 
-SpringFramework3.0과 Oracle, JavaScript등을 활용해 만든 스터디 카페 안내 웹 어플리케이션으로 구글맵 API를 활용하여 스터디카페의 위치 정보를 안내하고, 도로명주소 API를 활용해 회원가입 시 주소를 입력하도록 제작 
+SpringFramework3.0과 Oracle, JavaScript등을 활용해 만든 스터디 카페 안내 웹 어플리케이션으로 구글맵 API를 활용하여 스터디카페의 위치 정보를 안내하고, 도로명주소 API를 활용해 회원가입 시 주소를 입력하도록 제작
+
+* **소심한 총무**
+
+소심한 성향을 가진 총무들을 위한 모임 내 벌금 관리 서비스로, 모임의 벌금 상세 내역 페이지/필터링 등을 담당해 SpringBoot, JPA, Mysql, Redis 등을 사용해 Rest api 개발 
+
+## Work Experience
+---
+* **(주) 반디에스앤씨**
+
+SSO, IM/EAM을 개발하는 솔루션 회사, 백엔드(SpringBoot/JPA/Graphql)에서부터 프론트엔드(Apollo/Axios/Vuejs)까지 풀스택으로 단위 기능별 개발
+
+
+* **파라메타(PARAMETA)**
+
+풀스택 기술을 통해 웹3 트랜스포메이션을 지원하는 블록체인 회사, 백엔드 개발 포지션으로 재직, 블록체인 기반 신원 인증 출입 관리 시스템과 NFT 마켓플레이스 API 개발, SpringBoot/MyBatis/Jooq/R2DBC/WebMvc/WebFlux/Solidity 등을 경험
 
 ## Awards
 ---
