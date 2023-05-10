@@ -20,9 +20,9 @@ font-weight:bold">
 
 ## Personal Data
 ---
-> 1991.3.25 대한민국,대전광역시 출생
+> Java lover (feat. SpringBoot, JPA)
 
-> 연락처: hb13pud731@gmail.com
+> Email: hb13pud731@gmail.com
 
 > Github : <a href="https://github.com/jean202">https://github.com/jean202</a>
 
@@ -35,7 +35,7 @@ font-weight:bold">
 
 > Mar.2016 ~ Aug.2020 한국방송통신대학교
 >
-> 컴퓨터과학과
+> 컴퓨터과학과 졸업
 
 
 ## Research Interest
