@@ -1,32 +1,51 @@
+{% assign author = site.data.authors.first[1] %}
+{% assign portfolio_page = site.pages | where: "title", "Portfolio" | first %}
+{% assign about_page = site.pages | where: "title", "About" | first %}
+
 <div id="_yDrawer">
   <div id="_sidebar" class="sidebar">
     <div class="sidebar-bg" style="background-color:{{ color }};background-image:url({{ image }})"></div>
-    <header class="sidebar-sticky" role="banner">
-      <br />
-      <div class="sidebar-about">
-        <h1><a id="_title" href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-        {{ site.tagline | truncatewords:50 | markdownify }}
-      </div>
-      <div class="sidebar-box">
+    <header class="sidebar-sticky site-sidebar" role="banner">
+      <section class="sidebar-panel sidebar-panel--brand">
+        <div class="sidebar-box sidebar-box--profile">
         {% if author.picture %}
         {% include srcset-img.html class="me" img=author.picture alt=author.name %}
         {% endif %}
-      </div>
-      {{ site.description | truncatewords:50 | markdownify }}
-      {% assign author = site.data.authors.first[1] %}
+        </div>
+        <div class="sidebar-about sidebar-about--brand">
+          <p class="sidebar-kicker">{{ site.title }}</p>
+          <h1><a id="_title" href="{{ '/' | relative_url }}">{{ author.name | default: site.title }}</a></h1>
+          {% if author.role %}
+          <p class="sidebar-role">{{ author.role }}</p>
+          {% endif %}
+          <p class="sidebar-summary">{{ site.description | strip }}</p>
+          <p class="sidebar-note">{{ site.tagline }}</p>
+        </div>
+        <div class="sidebar-badges">
+          {% if author.focus %}
+          <span>{{ author.focus }}</span>
+          {% endif %}
+          <span>{{ site.posts | size }} posts</span>
+          <span>{{ site.tags | size }} tags</span>
+        </div>
+        <div class="sidebar-actions">
+          <a class="sidebar-action" href="{{ portfolio_page.url | default:'/portfolio.html' | relative_url }}">Portfolio</a>
+          <a class="sidebar-action sidebar-action--ghost" href="{{ about_page.url | default:'/about.html' | relative_url }}">About</a>
+        </div>
+      </section>
       {% if author.social %}
-      <br />
-      <br />
-      <nav class="sidebar-nav heading" role="navigation">
-        {% include nav.html %}
-      </nav>
-      <br />
-
-      <br />
-
-      <div class="sidebar-social">
-        {% include social.html social=author.social %}
-      </div>
+      <section class="sidebar-panel sidebar-panel--compact">
+        <p class="sidebar-panel-title">Explore</p>
+        <nav class="sidebar-nav heading" role="navigation">
+          {% include nav.html %}
+        </nav>
+      </section>
+      <section class="sidebar-panel sidebar-panel--compact">
+        <p class="sidebar-panel-title">Connect</p>
+        <div class="sidebar-social">
+          {% include social.html social=author.social class_name='social-links' %}
+        </div>
+      </section>
       {% endif %}
     </header>
   </div>

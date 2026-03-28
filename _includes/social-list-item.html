@@ -6,12 +6,14 @@
   {% assign icon = platform %}
 {% endunless %}
 
-{% assign = data_social = site.data.social[icon] %}
+{% assign data_social = site.data.social[icon] %}
 
 {% if username contains "//" %}
   {% assign url = username %}
 {% else %}
-  {% assign url = username | prepend:data_social.prepend | append:data_soical.append %}
+  {% assign prepend = data_social.prepend | default:'' %}
+  {% assign append = data_social.append | default:'' %}
+  {% assign url = username | prepend:prepend | append:append %}
 {% endif %}
 
 <li>

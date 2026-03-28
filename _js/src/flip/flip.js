@@ -6,7 +6,6 @@ eslint-disable
 class-methods-use-this
 */
 
-import { Observable } from 'rxjs/Observable';
 import { empty } from 'rxjs/observable/empty';
 
 export default class Flip {
@@ -26,11 +25,11 @@ export default class Flip {
     this.animationMain.style.opacity = 0;
     this.animationMain.style.willChange = '';
 
-    return Observable::empty();
+    return empty();
   }
 
   ready() {
-    return Observable::empty();
+    return empty();
   }
 }
 

@@ -24,7 +24,9 @@
 
       {% include footer.html %}
     </main>
-    {% include right-side.html %}
+    {% if site.show_right_side_ads %}
+      {% include right-side.html %}
+    {% endif %}
   </div>
   {% include sidebar.html %}
 </div>

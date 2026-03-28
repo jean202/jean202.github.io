@@ -18,7 +18,7 @@ tagline:             "천천히 꾸준하게"
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  개발 못놓는 개발자
+  구조를 고민하는 Java 백엔드 개발자
 
 # This should be the same author as first entry in `_data/authors.yml`
 mnwt:
@@ -109,7 +109,10 @@ plugins:
 exclude:
   - README.md
   - LICENSE.md
+  - docs
   - node_modules
+  - vendor
+  - .bundle
   - package.json
   - package-lock.json
   - Gemfile
@@ -133,5 +136,3 @@ compress_html:
 
 sass:
   style:             compressed
-
-

@@ -44,4 +44,7 @@ theorydb.github.io
 node_modules
 .sass-cache
 .jekyll-metadata
+.bundle
+vendor
+assets/js/hydejack.js.map
 *.gem

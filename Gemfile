@@ -5,6 +5,10 @@ gem "jekyll-paginate", "~> 1.1"
 gem "jekyll-feed", "~> 0.9"
 gem "jekyll-sitemap", "~> 1.0"
 gem "jekyll-redirect-from", "~> 0.12"
+# Lock ActiveSupport below 7 for Ruby 2.6 compatibility.
+gem "activesupport", "< 7"
+# Lock Nokogiri below 1.14 because newer platform builds require newer Ruby.
+gem "nokogiri", "< 1.14"
 gem "classifier-reborn"
 gem 'wdm', '>= 0.1.0'
 gem "kramdown-parser-gfm"

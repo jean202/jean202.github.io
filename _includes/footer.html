@@ -1,9 +1,35 @@
-<footer>
-  <hr />
-  {% if site.copyright.size > 0 %}
-  {{ site.copyright | markdownify }}
-  {% endif %}
-  <p>
-    <code>Powered by <a href="https://jean202.github.io/">jean202</a></code>
-  </p>
+{% assign author = site.data.authors.first[1] %}
+{% assign portfolio_page = site.pages | where: "title", "Portfolio" | first %}
+{% assign about_page = site.pages | where: "title", "About" | first %}
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__identity">
+      <p class="site-footer__eyebrow">{{ site.title }}</p>
+      <p class="site-footer__name">{{ author.name | default: site.title }}</p>
+      {% if author.role %}
+      <p class="site-footer__role">{{ author.role }}</p>
+      {% endif %}
+      <p class="site-footer__summary">{{ site.description | strip }}</p>
+    </div>
+    <div class="site-footer__links">
+      <a href="{{ portfolio_page.url | default:'/portfolio.html' | relative_url }}">Portfolio</a>
+      <a href="{{ about_page.url | default:'/about.html' | relative_url }}">About</a>
+      {% if author.social.github %}
+      <a href="https://github.com/{{ author.social.github }}">GitHub</a>
+      {% endif %}
+      {% if author.email %}
+      <a href="mailto:{{ author.email }}">Email</a>
+      {% endif %}
+      {% if author.social.rss %}
+      <a href="{{ author.social.rss }}">RSS</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="site-footer__meta">
+    {% if site.copyright.size > 0 %}
+    <span>{{ site.copyright | markdownify | strip_html }}</span>
+    {% endif %}
+    <span>Built with Jekyll and a custom Hydejack theme.</span>
+  </div>
 </footer>

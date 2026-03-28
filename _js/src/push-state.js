@@ -9,7 +9,6 @@ import/no-unresolved,
 import/extensions
 */
 
-import { Observable } from 'rxjs/Observable';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 
 import { _catch as recover } from 'rxjs/operator/catch';
@@ -32,6 +31,7 @@ import elemDataset from 'elem-dataset';
 import { hasFeatures, animate } from './common';
 import CrossFader from './cross-fader';
 import upgradeMathBlocks from './katex';
+import { op, pipe } from './rxjs-helpers';
 
 import Flip from './flip/flip';
 import './flip/title';
@@ -52,8 +52,8 @@ const FADE_DURATION = 500;
 
 // whenever the source observable encounters an error,
 // we log it to the console, but continue as if it never happend
-function makeUnstoppable() {
-  return this::recover((error, caught) => {
+function makeUnstoppable(source) {
+  return recover.call(source, (error, caught) => {
     console.error(error); // eslint-disable-line
     return caught;
   });
@@ -89,34 +89,41 @@ if (!window.disablePushState && hasFeatures(REQUIREMENTS)) {
   `;
   document.querySelector('.navbar .content').appendChild(loading);
 
-  const start$ = Observable::fromEvent(pushState, 'y-push-state-start')
-    ::map(({ detail }) => detail)
-    ::map(detail => [detail, document.getElementById('_main')])
-    ::effect(() => {
+  const start$ = pipe(
+    fromEvent(pushState, 'y-push-state-start'),
+    op(map, ({ detail }) => detail),
+    op(map, detail => [detail, document.getElementById('_main')]),
+    op(effect, () => {
       // If a link on the drawer has been clicked, close it
       if (!window.isDesktop && window.drawer.opened) {
         window.drawer.close();
       }
-    })
-    ::share();
+    }),
+    op(share),
+  );
 
-  const ready$ = Observable::fromEvent(pushState, 'y-push-state-ready')
-    ::map(({ detail }) => detail)
-    ::share();
+  const ready$ = pipe(
+    fromEvent(pushState, 'y-push-state-ready'),
+    op(map, ({ detail }) => detail),
+    op(share),
+  );
 
-  const progress$ = Observable::fromEvent(pushState, 'y-push-state-progress')
-    ::map(({ detail }) => detail);
-    // ::share();
+  const progress$ = pipe(
+    fromEvent(pushState, 'y-push-state-progress'),
+    op(map, ({ detail }) => detail),
+  );
 
-  const after$ = Observable::fromEvent(pushState, 'y-push-state-after')
-    ::map(({ detail }) => detail)
-    ::share();
+  const after$ = pipe(
+    fromEvent(pushState, 'y-push-state-after'),
+    op(map, ({ detail }) => detail),
+    op(share),
+  );
 
   // const error$ = Observable.fromEvent(pushState, 'y-push-state-error');
 
   // HACK
   if (isSafari) {
-    Observable::fromEvent(window, 'popstate')
+    fromEvent(window, 'popstate')
       .subscribe(() => { document.body.style.minHeight = '999999px'; });
 
     after$
@@ -124,8 +131,9 @@ if (!window.disablePushState && hasFeatures(REQUIREMENTS)) {
   }
 
   // FLIP animation (when applicable)
-  start$
-    ::switchMap(([detail]) => {
+  pipe(
+    start$,
+    op(switchMap, ([detail]) => {
       const { event: { currentTarget } } = detail;
 
       const flip = Flip.create(
@@ -142,15 +150,16 @@ if (!window.disablePushState && hasFeatures(REQUIREMENTS)) {
       detail.flip = flip;
 
       return flip.start(currentTarget);
-    })
-    ::makeUnstoppable()
-    .subscribe();
+    }),
+    makeUnstoppable,
+  ).subscribe();
 
   // Fade main content out
-  start$
-    ::effect(([, main]) => { main.style.opacity = 0; })
-    ::filter(([{ type }]) => type === 'push' || !isSafari)
-    ::exhaustMap(([{ type }, main]) =>
+  pipe(
+    start$,
+    op(effect, ([, main]) => { main.style.opacity = 0; }),
+    op(filter, ([{ type }]) => type === 'push' || !isSafari),
+    op(exhaustMap, ([{ type }, main]) => pipe(
       animate(main, [
         { opacity: 1 },
         { opacity: 0 },
@@ -158,17 +167,19 @@ if (!window.disablePushState && hasFeatures(REQUIREMENTS)) {
         duration: DURATION,
         // easing: 'ease',
         easing: 'cubic-bezier(0,0,0.32,1)',
-      })
-        ::effect(() => { if (type === 'push') window.scroll(0, 0); })
-        ::zipWith(after$))
-    ::makeUnstoppable()
-    .subscribe();
+      }),
+      op(effect, () => { if (type === 'push') window.scroll(0, 0); }),
+      op(zipWith, after$),
+    )),
+    makeUnstoppable,
+  ).subscribe();
 
   // Show loading bar when taking longer than expected
-  progress$
-    ::effect(() => { loading.style.display = 'block'; })
-    ::makeUnstoppable()
-    .subscribe();
+  pipe(
+    progress$,
+    op(effect, () => { loading.style.display = 'block'; }),
+    makeUnstoppable,
+  ).subscribe();
 
   // TODO: error message!?
   // error$
@@ -179,50 +190,58 @@ if (!window.disablePushState && hasFeatures(REQUIREMENTS)) {
   //   .subscribe();
 
   // Prepare showing the new content
-  ready$
-    ::effect(() => { loading.style.display = 'none'; })
-    ::filter(({ type }) => type === 'push' || !isSafari)
-    ::switchMap(({ flip, content: [main] }) => flip.ready(main)::takeUntil(start$))
-    ::makeUnstoppable()
-    .subscribe();
+  pipe(
+    ready$,
+    op(effect, () => { loading.style.display = 'none'; }),
+    op(filter, ({ type }) => type === 'push' || !isSafari),
+    op(switchMap, ({ flip, content: [main] }) => pipe(
+      flip.ready(main),
+      op(takeUntil, start$),
+    )),
+    makeUnstoppable,
+  ).subscribe();
 
-  ready$
-    ::switchMap(({ content: [main] }) =>
-      crossFader.fetchImage(elemDataset(main))::takeUntil(start$))
-    ::startWith(document.querySelector('.sidebar-bg'))
-    ::pairwise()
-    ::mergeMap(::crossFader.crossFade)
-    ::makeUnstoppable()
-    .subscribe();
+  pipe(
+    ready$,
+    op(switchMap, ({ content: [main] }) => pipe(
+      crossFader.fetchImage(elemDataset(main)),
+      op(takeUntil, start$),
+    )),
+    op(startWith, document.querySelector('.sidebar-bg')),
+    op(pairwise),
+    op(mergeMap, crossFader.crossFade.bind(crossFader)),
+    makeUnstoppable,
+  ).subscribe();
 
   // Animate the new content
-  after$
-    ::filter(({ type }) => type === 'push' || !isSafari)
-    ::map(kind => [kind, document.querySelector('main')])
-    ::switchMap(([, main]) =>
-      animate(main, [
-        { transform: 'translateY(-2rem)', opacity: 0 },
-        { transform: 'translateY(0)', opacity: 1 },
-      ], {
-        duration: DURATION,
-        // easing: 'ease',
-        easing: 'cubic-bezier(0,0,0.32,1)',
-      }))
-    ::makeUnstoppable()
-    .subscribe();
+  pipe(
+    after$,
+    op(filter, ({ type }) => type === 'push' || !isSafari),
+    op(map, kind => [kind, document.querySelector('main')]),
+    op(switchMap, ([, main]) => animate(main, [
+      { transform: 'translateY(-2rem)', opacity: 0 },
+      { transform: 'translateY(0)', opacity: 1 },
+    ], {
+      duration: DURATION,
+      // easing: 'ease',
+      easing: 'cubic-bezier(0,0,0.32,1)',
+    })),
+    makeUnstoppable,
+  ).subscribe();
 
-  after$
+  pipe(
+    after$,
     // Don't send a pageview when the user blasts through the history..
-    ::debounceTime(2 * DURATION)
-    ::effect(() => {
+    op(debounceTime, 2 * DURATION),
+    op(effect, () => {
       // Send google analytics pageview
       if (window.ga) window.ga('send', 'pageview');
 
       // Upgrade math blocks
       upgradeMathBlocks();
-    })
-    ::makeUnstoppable()
-    .subscribe();
+    }),
+    makeUnstoppable,
+  ).subscribe();
 
   new PushState(pushState, {
     replaceIds: ['_main'],

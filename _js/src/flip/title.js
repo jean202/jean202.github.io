@@ -10,13 +10,13 @@ import/extensions,
 class-methods-use-this,
 */
 
-import { Observable } from 'rxjs/Observable';
 import { timer } from 'rxjs/observable/timer';
 
 import { _do as effect } from 'rxjs/operator/do';
 import { _finally as cleanup } from 'rxjs/operator/finally';
 
 import { animate } from '../common';
+import { op, pipe } from '../rxjs-helpers';
 import Flip from './flip';
 
 const TITLE_SELECTOR = '.page-title, .post-title';
@@ -45,15 +45,17 @@ class TitleFlip extends Flip {
 
     currentTarget.style.opacity = 0;
 
-    return animate(title, [
-      { transform: `translate3d(${invertX}px, ${invertY}px, 0) scale(${invertScale})` },
-      { transform: 'translate3d(0, 0, 0) scale(1)' },
-    ], {
-      duration: this.duration,
-      // easing: 'ease',
-      easing: 'cubic-bezier(0,0,0.32,1)',
-    })
-      ::effect(() => { this.animationMain.style.position = 'absolute'; });
+    return pipe(
+      animate(title, [
+        { transform: `translate3d(${invertX}px, ${invertY}px, 0) scale(${invertScale})` },
+        { transform: 'translate3d(0, 0, 0) scale(1)' },
+      ], {
+        duration: this.duration,
+        // easing: 'ease',
+        easing: 'cubic-bezier(0,0,0.32,1)',
+      }),
+      op(effect, () => { this.animationMain.style.position = 'absolute'; }),
+    );
   }
 
   ready(main) {
@@ -67,17 +69,19 @@ class TitleFlip extends Flip {
     }
 
     // HACK: add some extra time to prevent hiccups
-    return Observable::timer(this.duration + 100)
-      ::effect(() => {
+    return pipe(
+      timer(this.duration + 100),
+      op(effect, () => {
         if (title != null) {
           title.style.opacity = 1;
           title.style.willChange = '';
         }
-      })
-      ::cleanup(() => {
+      }),
+      op(cleanup, () => {
         this.animationMain.style.opacity = 0;
         this.animationMain.style.willChange = '';
-      });
+      }),
+    );
   }
 }
 
