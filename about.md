@@ -2,7 +2,7 @@
 layout: page
 title: About
 description: 천천히 꾸준하게, 오래 유지되는 구조를 만드는 Java 백엔드 개발자입니다.
-menu: true
+menu: false
 order: 2
 ---
 
