@@ -2,6 +2,9 @@
 layout: page
 title: Portfolio
 description: 주요 프로젝트와 개발 경험을 한눈에 볼 수 있도록 정리한 포트폴리오입니다.
+permalink: /portfolio/
+redirect_from:
+  - /portfolio.html
 menu: false
 order: 1
 ---

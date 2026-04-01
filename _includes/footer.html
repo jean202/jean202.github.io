@@ -13,8 +13,8 @@
       <p class="site-footer__summary">{{ site.description | strip }}</p>
     </div>
     <div class="site-footer__links">
-      <a href="{{ portfolio_page.url | default:'/portfolio.html' | relative_url }}">Portfolio</a>
-      <a href="{{ about_page.url | default:'/about.html' | relative_url }}">About</a>
+      <a href="{{ portfolio_page.url | default:'/portfolio/' | relative_url }}">Portfolio</a>
+      <a href="{{ about_page.url | default:'/about/' | relative_url }}">About</a>
       {% if author.social.github %}
       <a href="https://github.com/{{ author.social.github }}">GitHub</a>
       {% endif %}

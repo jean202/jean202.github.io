@@ -29,8 +29,8 @@
           <span>{{ site.tags | size }} tags</span>
         </div>
         <div class="sidebar-actions">
-          <a class="sidebar-action" href="{{ portfolio_page.url | default:'/portfolio.html' | relative_url }}">Portfolio</a>
-          <a class="sidebar-action sidebar-action--ghost" href="{{ about_page.url | default:'/about.html' | relative_url }}">About</a>
+          <a class="sidebar-action" href="{{ portfolio_page.url | default:'/portfolio/' | relative_url }}">Portfolio</a>
+          <a class="sidebar-action sidebar-action--ghost" href="{{ about_page.url | default:'/about/' | relative_url }}">About</a>
         </div>
       </section>
       {% if author.social %}
