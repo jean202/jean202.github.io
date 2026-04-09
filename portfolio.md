@@ -63,35 +63,38 @@ order: 1
     <article class="profile-card profile-card--accent">
       <p class="profile-kicker">Backend / Data / Infra</p>
       <h3><a href="https://github.com/jean202/asset-radar">asset-radar</a></h3>
-      <p>금, 코인, 국내외 주식 시세를 수집하고 Kafka 기반 이벤트 흐름으로 분석, 알림, 조회 API와 대시보드까지 연결하는 실시간 자산 모니터링 프로젝트입니다.</p>
+      <p>금, 코인, 국내외 주식 시세를 Upbit, Binance, KIS, Alpha Vantage, Finnhub, Gold API 6개 소스에서 수집하고 Kafka 기반 이벤트 흐름으로 분석, 알림, 조회 API와 React 대시보드까지 연결하는 실시간 자산 모니터링 프로젝트입니다.</p>
       <div class="profile-chip-group">
         <span class="profile-chip">Java</span>
         <span class="profile-chip">WebFlux</span>
         <span class="profile-chip">Kafka</span>
-        <span class="profile-chip">React Dashboard</span>
+        <span class="profile-chip">Binance / Finnhub</span>
+        <span class="profile-chip">React</span>
         <span class="profile-chip">Prometheus</span>
       </div>
     </article>
     <article class="profile-card">
       <p class="profile-kicker">Backend / Domain Modeling</p>
       <h3><a href="https://github.com/jean202/card-mizer">card-mizer</a></h3>
-      <p>카드 실적과 혜택 정책을 바탕으로 결제 카드를 추천하는 백엔드 데모입니다. 도메인 규칙을 중심에 두고 헥사고날 아키텍처와 멀티모듈 구조를 적용했습니다.</p>
+      <p>카드 실적과 혜택 정책을 바탕으로 결제 카드를 추천하는 백엔드입니다. 도메인 규칙을 중심에 두고 헥사고날 아키텍처와 멀티모듈 구조를 적용했으며, Testcontainers 기반 PostgreSQL 통합 테스트를 갖추고 있습니다.</p>
       <div class="profile-chip-group">
         <span class="profile-chip">Spring Boot</span>
         <span class="profile-chip">Hexagonal</span>
         <span class="profile-chip">Gradle Multi-module</span>
-        <span class="profile-chip">JPA</span>
+        <span class="profile-chip">Testcontainers</span>
+        <span class="profile-chip">Flyway</span>
       </div>
     </article>
     <article class="profile-card">
       <p class="profile-kicker">AI Product / UX / Positioning</p>
       <h3><a href="https://github.com/jean202/signalmate">SignalMate</a></h3>
-      <p>채팅 기반 관계 신호를 분석하고 다음 메시지까지 제안하는 제품을 목표로 한 프로젝트입니다. 현재는 랜딩, 분석 흐름, 규칙 기반 해석, API 프로토타입을 중심으로 발전시키고 있습니다.</p>
+      <p>채팅 기반 관계 신호를 분석하고 다음 메시지까지 제안하는 AI 제품입니다. 카카오톡 내보내기 자동 파싱, 규칙 기반+LLM 하이브리드 분석 엔진, 4단계 분석 체험 UI를 갖추고 있습니다.</p>
       <div class="profile-chip-group">
         <span class="profile-chip">Next.js</span>
-        <span class="profile-chip">Rule-based Analysis</span>
-        <span class="profile-chip">LLM Extension</span>
-        <span class="profile-chip">Landing Copy</span>
+        <span class="profile-chip">Prisma</span>
+        <span class="profile-chip">Claude API</span>
+        <span class="profile-chip">Chat Parser</span>
+        <span class="profile-chip">Rule-based + AI</span>
       </div>
     </article>
     <article class="profile-card">
