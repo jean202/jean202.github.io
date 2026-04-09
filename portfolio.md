@@ -62,7 +62,7 @@ order: 1
   <div class="profile-grid profile-grid--two">
     <article class="profile-card profile-card--accent">
       <p class="profile-kicker">Backend / Data / Infra</p>
-      <h3>asset-radar</h3>
+      <h3><a href="https://github.com/jean202/asset-radar">asset-radar</a></h3>
       <p>금, 코인, 국내외 주식 시세를 수집하고 Kafka 기반 이벤트 흐름으로 분석, 알림, 조회 API와 대시보드까지 연결하는 실시간 자산 모니터링 프로젝트입니다.</p>
       <div class="profile-chip-group">
         <span class="profile-chip">Java</span>
@@ -74,7 +74,7 @@ order: 1
     </article>
     <article class="profile-card">
       <p class="profile-kicker">Backend / Domain Modeling</p>
-      <h3>card-mizer</h3>
+      <h3><a href="https://github.com/jean202/card-mizer">card-mizer</a></h3>
       <p>카드 실적과 혜택 정책을 바탕으로 결제 카드를 추천하는 백엔드 데모입니다. 도메인 규칙을 중심에 두고 헥사고날 아키텍처와 멀티모듈 구조를 적용했습니다.</p>
       <div class="profile-chip-group">
         <span class="profile-chip">Spring Boot</span>
