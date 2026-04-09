@@ -85,7 +85,7 @@ order: 1
     </article>
     <article class="profile-card">
       <p class="profile-kicker">AI Product / UX / Positioning</p>
-      <h3>SignalMate</h3>
+      <h3><a href="https://github.com/jean202/signalmate">SignalMate</a></h3>
       <p>채팅 기반 관계 신호를 분석하고 다음 메시지까지 제안하는 제품을 목표로 한 프로젝트입니다. 현재는 랜딩, 분석 흐름, 규칙 기반 해석, API 프로토타입을 중심으로 발전시키고 있습니다.</p>
       <div class="profile-chip-group">
         <span class="profile-chip">Next.js</span>
@@ -96,7 +96,7 @@ order: 1
     </article>
     <article class="profile-card">
       <p class="profile-kicker">AI Automation / Marketing</p>
-      <h3>blog-to-shorts</h3>
+      <h3><a href="https://github.com/jean202/blog-to-shorts">blog-to-shorts</a></h3>
       <p>네이버 블로그 글을 크롤링해 AI로 스크립트를 만들고, 세로형 영상 생성과 YouTube Shorts 업로드까지 자동화하는 파이프라인입니다.</p>
       <div class="profile-chip-group">
         <span class="profile-chip">Python</span>
@@ -118,7 +118,7 @@ order: 1
     </article>
     <article class="profile-card">
       <p class="profile-kicker">User Problem / Integration Tool</p>
-      <h3>discord-kakao-translator</h3>
+      <h3><a href="https://github.com/jean202/discord-kakao-translator">discord-kakao-translator</a></h3>
       <p>Discord 메시지를 감지해 영어 비중이 높은 메시지만 한국어로 번역하고 카카오톡으로 전달하는 개인용 브리지입니다. 상태 UI와 메뉴바 트레이 앱까지 함께 다루고 있습니다.</p>
       <div class="profile-chip-group">
         <span class="profile-chip">Node.js</span>
