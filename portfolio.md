@@ -134,6 +134,25 @@ order: 1
 </section>
 
 <section class="profile-section">
+  <h2>개인 도구 / CLI</h2>
+  <div class="profile-grid profile-grid--two">
+    <article class="profile-card">
+      <p class="profile-kicker">Local AI Tool / Python CLI</p>
+      <h3><a href="https://github.com/jean202/video-trans">video-trans</a></h3>
+      <p>비디오에서 자막과 텍스트를 로컬에서만 추출하는 CLI 도구입니다. faster-whisper로 음성을 SRT/VTT/TXT로 변환하고, Tesseract OCR로 화면 문자열도 추출합니다. 외부 API 없이 완전 오프라인으로 동작하며, 여러 파일 배치 처리와 SNS 숏폼 영역 크롭 OCR을 지원합니다.</p>
+      <div class="profile-chip-group">
+        <span class="profile-chip">Python</span>
+        <span class="profile-chip">faster-whisper</span>
+        <span class="profile-chip">Tesseract OCR</span>
+        <span class="profile-chip">ffmpeg</span>
+        <span class="profile-chip">SRT / VTT</span>
+        <span class="profile-chip">Offline / Local</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="profile-section">
   <h2>경력</h2>
   <div class="profile-timeline">
     <article class="timeline-item">
