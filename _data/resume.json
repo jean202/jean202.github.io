@@ -1,130 +1,168 @@
 {
   "basics": {
-    "name": "",
-    "label": "Programmer",
-    "picture": "https://placehold.it/126x126",
-    "email": "",
-    "phone": "(xx) xxx-xxxx",
-    "website": "https://richardhendricks.com",
-    "summary": "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation! Open `_data/resume.json` to edit this text.",
+    "name": "Jinha Kim",
+    "label": "Java Backend Engineer",
+    "picture": "/assets/img/me.jpg",
+    "email": "anowheretogo@naver.com",
+    "phone": "",
+    "website": "https://jean202.github.io",
+    "summary": "Java와 Spring 생태계를 기반으로 백엔드 서비스를 설계·개발해 왔습니다. 인증, 결제, 도메인 모델링, API 설계처럼 서비스 핵심 흐름을 다루는 일을 중심에 두며, 최근에는 AI, 자동화, 인프라, 프론트엔드까지 제품 전체 맥락으로 관심을 넓혀 가고 있습니다.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "city": "Seoul",
+      "countryCode": "KR",
+      "region": "Seoul"
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "neutralthoughts",
-        "url": ""
-      },
-      {
-        "network": "SoundCloud",
-        "username": "dandymusicnl",
-        "url": "https://soundcloud.com/dandymusicnl"
+        "network": "GitHub",
+        "username": "jean202",
+        "url": "https://github.com/jean202"
       }
     ]
   },
   "work": [
     {
-      "company": "Pied Piper",
-      "position": "CEO/President",
-      "website": "https://piedpiper.com",
-      "startDate": "2013-12-01",
-      "endDate": "2014-12-01",
-      "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
+      "company": "틱스패스 (TixPass)",
+      "position": "백엔드 개발자 · 사원",
+      "website": "",
+      "startDate": "2025-11-01",
+      "endDate": "",
+      "summary": "공연·전시·스포츠 예매를 위한 B2B/B2C 티켓팅 SaaS 플랫폼 개발. 모바일 앱, POS, 키오스크, 파트너 콘솔, 어드민 콘솔, 랜딩 6개 채널에 대응하는 API 체계를 설계하고, 레거시 JSP를 Next.js 모노레포로 이관했습니다.",
       "highlights": [
-        "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-        "Successfully won Techcrunch Disrupt",
-        "Optimized an algorithm that holds the current world record for Weisman Scores"
+        "POS 통합 결제 시스템: Bootpay PG 연동, 카드/현금/N분할 결제, 중복 취소 방지, 결제 상태 이력 추적",
+        "멤버십 전체 라이프사이클: 가입 → 드림시큐리티 본인인증 → 결제 → 카드 발급 → 만료 스케줄러",
+        "스마트 도슨트: BLE 비콘 세션 관리, 작품 감상 로깅, 설문·FCM 푸시",
+        "JWT + RBAC 3채널 권한 분리(모바일/파트너/어드민), AES-CBC 엔티티 ID 암호화",
+        "키오스크 백엔드 신규 구축 및 VPOS·QR 결제 연동, 4개 국어 다국어 지원 (이응노미술관 현장 투입)",
+        "MySQL Primary-Replica GTID 복제 구축 및 런북 문서화",
+        "OSIV 비활성화 전체 리팩토링으로 트랜잭션 경계 명확화 및 간헐적 장애 해소",
+        "HikariCP 커넥션 풀 고갈 근본 원인 분석 및 해결",
+        "Next.js + MUI 기반 3개 앱 모노레포 구축 (파트너 콘솔·어드민 콘솔·랜딩)",
+        "Spring REST Docs API 문서 자동화로 빌드 시간 86% 단축",
+        "Native Query + ST_Distance_Sphere 적용으로 쿼리 수 75% 감소, 응답 시간 75% 단축",
+        "58개 컨트롤러 / 140개 이상 엔티티 / 31개 SQL 마이그레이션 / 프론트 50페이지 이상을 4개월 내 구축"
       ]
-    }
-  ],
-  "volunteer": [
+    },
     {
-      "organization": "CoderDojo",
-      "position": "Teacher",
-      "website": "https://coderdojo.com/",
-      "startDate": "2012-01-01",
-      "endDate": "2013-01-01",
-      "summary": "Global movement of free coding clubs for young people.",
+      "company": "파라메타 (PARAMETA, 구 ICONLOOP)",
+      "position": "백엔드 개발자 · 사원/매니저",
+      "website": "",
+      "startDate": "2021-05-01",
+      "endDate": "2022-12-31",
+      "summary": "블록체인 기반 신원인증 출입관리 플랫폼과 게임 NFT 마켓플레이스 백엔드 API를 개발했습니다. Spring Boot, WebFlux, R2DBC, jOOQ, Solidity를 실무에 적용했습니다.",
       "highlights": [
-        "Awarded 'Teacher of the Month'"
+        "포스코 체인지업 그라운드: 커뮤니티 시스템 전체 설계·개발 (게시판, 댓글, 좋아요, 북마크, 페이징/정렬/검색)",
+        "공간 예약·방문객 관리·사용자 계정 기능 공동 개발",
+        "jOOQ 도입으로 쿼리 안정성·유지보수성 강화, 이미지 비동기 압축으로 업로드 속도 40% 단축",
+        "입주사 100여 곳 이상 실제 운영 서비스에 기여",
+        "ISKRA NFT 마켓플레이스: WebFlux + R2DBC 비동기 논블로킹 구조로 대규모 트래픽 대응",
+        "Solidity 스마트 컨트랙트 작성 및 클레이튼(Klaytn) 네트워크 배포 (ERC-20/KIP-7, ERC-721/KIP-17)",
+        "Web3j로 Spring Boot ↔ 블록체인 연동, 온체인/오프체인 데이터 정합성 확보",
+        "Spring REST Docs 기반 API 문서 자동화 및 TDD 프로세스 적용"
+      ]
+    },
+    {
+      "company": "반디에스앤씨 (Bandisnc)",
+      "position": "웹 개발자 · 연구원",
+      "website": "",
+      "startDate": "2021-02-01",
+      "endDate": "2021-05-31",
+      "summary": "공공기관(기상청, 경찰청) 대상 IM/EAM 통합 관리 서비스의 풀스택 개발을 담당했습니다.",
+      "highlights": [
+        "Spring Boot + GraphQL 기반 API 개발 (Query/Mutation Resolver 설계)",
+        "JPA + MyBatis 하이브리드 구조에서 도메인별 CRUD 구현",
+        "Vue.js + Vuetify 프론트엔드 개발 및 Jasper Report 기반 PDF/Excel 출력",
+        "GraphQL + Apollo 도입으로 클라이언트 맞춤형 데이터 제공 및 응답 성능 최적화",
+        "코드 자동 생성 도구 활용으로 반복 CRUD 개발 시간 30% 단축",
+        "기상청·경찰청 등 공공기관 납품 프로젝트에서 보안 요구사항을 준수하며 개발 완수"
       ]
     }
   ],
+  "volunteer": [],
   "education": [
     {
-      "institution": "University of Oklahoma",
-      "area": "Information Technology",
+      "institution": "한국방송통신대학교",
+      "area": "컴퓨터과학과",
       "studyType": "Bachelor",
-      "startDate": "2011-06-01",
-      "endDate": "2014-01-01",
-      "gpa": "4.0",
-      "courses": [
-        "DB1101 - Basic SQL",
-        "CS2011 - Java Introduction"
-      ]
+      "startDate": "2016-03-01",
+      "endDate": "2020-08-31",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "명지대학교",
+      "area": "행정학과",
+      "studyType": "Bachelor",
+      "startDate": "2010-03-01",
+      "endDate": "2011-02-28",
+      "gpa": "",
+      "courses": []
     }
   ],
   "awards": [
     {
-      "title": "Digital Compression Pioneer Award",
-      "date": "2014-11-01",
-      "awarder": "Techcrunch",
-      "summary": "There is no spoon."
-    }
-  ],
-  "publications": [
-    {
-      "name": "Video compression for 3d media",
-      "publisher": "Hooli",
-      "releaseDate": "2014-10-01",
-      "website": "https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)",
-      "summary": "Innovative middle-out compression algorithm that changes the way we store data."
-    }
-  ],
-  "skills": [
-    {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "Javascript"
-      ]
+      "title": "정보처리기사",
+      "date": "",
+      "awarder": "한국산업인력공단",
+      "summary": "국가기술자격증"
     },
     {
-      "name": "Compression",
-      "level": "Master",
-      "keywords": [
-        "Mpeg",
-        "MP4",
-        "GIF"
-      ]
+      "title": "컴퓨터활용능력 2급",
+      "date": "",
+      "awarder": "대한상공회의소",
+      "summary": "국가기술자격증"
+    },
+    {
+      "title": "워드프로세서 1급",
+      "date": "",
+      "awarder": "대한상공회의소",
+      "summary": "국가기술자격증"
+    },
+    {
+      "title": "OPIc IM2",
+      "date": "",
+      "awarder": "ACTFL",
+      "summary": "영어 말하기 시험"
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Backend",
+      "level": "Main",
+      "keywords": ["Java", "Spring Boot", "WebFlux", "Kafka", "JPA", "MyBatis", "jOOQ", "GraphQL", "Spring REST Docs"]
+    },
+    {
+      "name": "Database & Infra",
+      "level": "Proficient",
+      "keywords": ["PostgreSQL", "MySQL", "Redis", "Docker", "AWS EC2", "Prometheus"]
+    },
+    {
+      "name": "Frontend",
+      "level": "Working",
+      "keywords": ["Next.js", "React", "TypeScript", "Vue.js", "MUI"]
+    },
+    {
+      "name": "AI & Automation",
+      "level": "Working",
+      "keywords": ["Claude API", "OpenAI API", "FastAPI", "Python", "FFmpeg"]
+    },
+    {
+      "name": "Blockchain",
+      "level": "Experienced",
+      "keywords": ["Solidity", "Klaytn", "Web3j", "ERC-721", "ERC-20"]
     }
   ],
   "languages": [
     {
-      "language": "English",
+      "language": "Korean",
       "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Intermediate (OPIc IM2)"
     }
   ],
-  "interests": [
-    {
-      "name": "Wildlife",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Erlich Bachman",
-      "reference": "It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company."
-    }
-  ]
+  "interests": [],
+  "references": []
 }
