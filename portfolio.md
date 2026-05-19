@@ -25,15 +25,15 @@ order: 1
   <h2>추구하는 방향</h2>
   <div class="profile-grid profile-grid--three">
     <article class="profile-card profile-card--accent">
-      <h3>백엔드 설계를 많이 다뤘습니다</h3>
+      <h3>백엔드 설계</h3>
       <p>Spring Boot, WebFlux, Kafka, SDK 설계, 헥사고날 아키텍처, 멀티모듈처럼 서비스가 오래 유지되기 위한 구조를 고민해 왔습니다.</p>
     </article>
     <article class="profile-card">
-      <h3>문서도 같이 정리합니다</h3>
+      <h3>문서 정리</h3>
       <p>API 명세, 화면 스펙, 기술 결정 문서, README를 함께 남겨서 나중에 다시 봐도 왜 그렇게 만들었는지 알 수 있게 하려 합니다.</p>
     </article>
     <article class="profile-card">
-      <h3>필요하면 제품 쪽도 같이 봅니다</h3>
+      <h3>제품 기능 구현</h3>
       <p>백엔드가 중심이지만 AI 기능, 분석 화면, 랜딩 페이지, 운영 도구, 자동화 파이프라인처럼 사용자가 실제로 만나는 부분도 함께 만들어 봅니다.</p>
     </article>
   </div>
