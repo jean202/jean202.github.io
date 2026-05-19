@@ -44,15 +44,15 @@ order: 1
   <div class="profile-grid profile-grid--three">
     <article class="profile-card profile-card--accent">
       <h3>백엔드 정체성</h3>
-      <p><strong>asset-radar</strong>와 <strong>card-mizer</strong>를 중심으로 데이터 수집, 반응형 파이프라인, 도메인 모델링, 헥사고날 아키텍처 같은 백엔드 역량을 선명하게 보여주고자 합니다.</p>
+      <p><strong>card-mizer</strong>, <strong>asset-radar</strong>, <strong>slotops</strong>를 중심으로 도메인 모델링, 이벤트 흐름, 운영형 API, 예약/리소스 관리 같은 백엔드 역량을 선명하게 보여주고자 합니다.</p>
     </article>
     <article class="profile-card">
-      <h3>AI와 제품 폭</h3>
-      <p><strong>SignalMate</strong>와 <strong>blog-to-shorts</strong>는 AI 기능을 제품 문제, 분석 경험, 랜딩과 전환까지 연결하려는 시도를 담고 있습니다. 구현뿐 아니라 포지셔닝과 사용자 가치까지 함께 다룹니다.</p>
+      <h3>현장 문제와 운영 관점</h3>
+      <p><strong>booking-reservation-sync-monitor</strong>는 실제 호텔 현장에서 관찰한 OTA/PMS 동기화 지연 문제를 백엔드 시스템으로 모델링한 프로젝트입니다. API 설계가 실제 운영 리스크를 어떻게 줄이는지 보여주는 축입니다.</p>
     </article>
     <article class="profile-card">
-      <h3>실제 사용자 문제 해결</h3>
-      <p><strong>Session Pilot</strong>과 <strong>discord-kakao-translator</strong>는 실제로 반복되는 작업 운영 문제를 줄이는 도구입니다. 일상적인 불편을 제품과 워크플로우 단위로 푸는 감각을 보여주려는 축입니다.</p>
+      <h3>AI와 제품 확장</h3>
+      <p><strong>ThreadKeeper</strong>와 <strong>SignalMate</strong>는 AI를 단순 호출 기능이 아니라 작업 흐름, 사용자 판단, 분석 경험으로 연결하려는 시도입니다. 제품 문제 정의와 구현을 함께 다룹니다.</p>
     </article>
   </div>
 </section>
@@ -86,6 +86,42 @@ order: 1
       </div>
     </article>
     <article class="profile-card">
+      <p class="profile-kicker">Backend / Reservation Operations</p>
+      <h3><a href="https://github.com/jean202/slotops">slotops</a></h3>
+      <p>스터디룸, 연습실, 촬영 스튜디오, 스포츠 코트처럼 시간 단위로 자원을 예약하는 오프라인 사업장을 위한 예약 운영 SaaS 백엔드입니다. 조직, 지점, 자원, 예약 가능 규칙, 블랙아웃 기간, 예약 생성 흐름을 Spring Boot 기반으로 구현했습니다.</p>
+      <div class="profile-chip-group">
+        <span class="profile-chip">Spring Boot</span>
+        <span class="profile-chip">JPA</span>
+        <span class="profile-chip">JWT</span>
+        <span class="profile-chip">Flyway</span>
+        <span class="profile-chip">Reservation Rules</span>
+      </div>
+    </article>
+    <article class="profile-card">
+      <p class="profile-kicker">Backend / Hotel Operations</p>
+      <h3><a href="https://github.com/jean202/booking-reservation-sync-monitor">booking-reservation-sync-monitor</a></h3>
+      <p>호텔 근무 중 관찰한 Booking.com 예약 메일과 PMS 반영 지연 문제를 바탕으로 만든 Spring Boot 백엔드입니다. mock OTA connector, 멱등 import, PMS sync delay 감지, 객실 배정 추천, 운영 대시보드 API를 갖추고 있습니다.</p>
+      <div class="profile-chip-group">
+        <span class="profile-chip">Java 17</span>
+        <span class="profile-chip">Spring Boot</span>
+        <span class="profile-chip">JPA</span>
+        <span class="profile-chip">OpenAPI</span>
+        <span class="profile-chip">H2</span>
+      </div>
+    </article>
+    <article class="profile-card">
+      <p class="profile-kicker">AI Workflow / Handoff Tool</p>
+      <h3><a href="https://github.com/jean202/threadkeeper">ThreadKeeper</a></h3>
+      <p>여러 AI 작업 세션의 원래 의도, 완료 상태, 다음 액션, 인수인계 초안, 알림 규칙을 관리하는 작업 메모리 도구입니다. Spring Boot API, Next.js 대시보드, agent-state-migrator bridge를 함께 구성했습니다.</p>
+      <div class="profile-chip-group">
+        <span class="profile-chip">Spring Boot</span>
+        <span class="profile-chip">Next.js</span>
+        <span class="profile-chip">AI Workflow</span>
+        <span class="profile-chip">Handoff</span>
+        <span class="profile-chip">Discord Webhook</span>
+      </div>
+    </article>
+    <article class="profile-card">
       <p class="profile-kicker">AI Product / UX / Positioning</p>
       <h3><a href="https://github.com/jean202/signalmate">SignalMate</a></h3>
       <p>채팅 기반 관계 신호를 분석하고 다음 메시지까지 제안하는 AI 제품입니다. 카카오톡 내보내기 자동 파싱, 규칙 기반+LLM 하이브리드 분석 엔진, 4단계 분석 체험 UI를 갖추고 있습니다.</p>
@@ -95,6 +131,23 @@ order: 1
         <span class="profile-chip">Claude API</span>
         <span class="profile-chip">Chat Parser</span>
         <span class="profile-chip">Rule-based + AI</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="profile-section">
+  <h2>라이브러리 / 자동화 도구</h2>
+  <div class="profile-grid profile-grid--two">
+    <article class="profile-card">
+      <p class="profile-kicker">Java SDK / Notification</p>
+      <h3><a href="https://github.com/jean202/webhook-notify">webhook-notify</a></h3>
+      <p>Spring 애플리케이션과 순수 Java 애플리케이션에서 Slack/Discord 웹훅 알림을 다루기 위한 경량 SDK입니다. 템플릿 렌더링, 조건부 전송, Spring AOP 어노테이션 연동까지 확장했습니다.</p>
+      <div class="profile-chip-group">
+        <span class="profile-chip">Java 17</span>
+        <span class="profile-chip">Gradle Multi-module</span>
+        <span class="profile-chip">Spring AOP</span>
+        <span class="profile-chip">Slack / Discord</span>
       </div>
     </article>
     <article class="profile-card">
@@ -109,17 +162,6 @@ order: 1
       </div>
     </article>
     <article class="profile-card">
-      <p class="profile-kicker">Workflow Product / In Progress</p>
-      <h3>Session Pilot</h3>
-      <p>여러 AI 세션에 맡긴 일을 잊지 않도록 자동 감지, 검토 큐, 재진입 요약을 제공하는 작업 관제 도구를 목표로 한 프로젝트입니다. 현재는 상업화 MVP 관점의 제품 정의와 구현 범위를 다듬고 있습니다.</p>
-      <div class="profile-chip-group">
-        <span class="profile-chip">AI Workflow</span>
-        <span class="profile-chip">Browser Capture</span>
-        <span class="profile-chip">Review Queue</span>
-        <span class="profile-chip">Product Strategy</span>
-      </div>
-    </article>
-    <article class="profile-card">
       <p class="profile-kicker">User Problem / Integration Tool</p>
       <h3><a href="https://github.com/jean202/discord-kakao-translator">discord-kakao-translator</a></h3>
       <p>Discord 메시지를 감지해 영어 비중이 높은 메시지만 한국어로 번역하고 카카오톡으로 전달하는 개인용 브리지입니다. 상태 UI와 메뉴바 트레이 앱까지 함께 다루고 있습니다.</p>
@@ -130,12 +172,6 @@ order: 1
         <span class="profile-chip">KakaoTalk</span>
       </div>
     </article>
-  </div>
-</section>
-
-<section class="profile-section">
-  <h2>개인 도구 / CLI</h2>
-  <div class="profile-grid profile-grid--two">
     <article class="profile-card">
       <p class="profile-kicker">Local AI Tool / Python CLI</p>
       <h3><a href="https://github.com/jean202/video-trans">video-trans</a></h3>
@@ -147,6 +183,35 @@ order: 1
         <span class="profile-chip">ffmpeg</span>
         <span class="profile-chip">SRT / VTT</span>
         <span class="profile-chip">Offline / Local</span>
+      </div>
+    </article>
+    <article class="profile-card">
+      <p class="profile-kicker">Local Utility / Java CLI</p>
+      <h3><a href="https://github.com/jean202/heic-jpg">heic-jpg</a></h3>
+      <p>macOS에서 HEIC/HEIF 파일을 JPEG로 일괄 변환하는 Java 17 CLI입니다. 단일 파일, 디렉터리 재귀 변환, dry-run, overwrite, max-dimension 옵션을 지원합니다.</p>
+      <div class="profile-chip-group">
+        <span class="profile-chip">Java 17</span>
+        <span class="profile-chip">CLI</span>
+        <span class="profile-chip">macOS sips</span>
+        <span class="profile-chip">Batch Conversion</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="profile-section">
+  <h2>협업 / 앱 프로젝트</h2>
+  <div class="profile-grid profile-grid--two">
+    <article class="profile-card">
+      <p class="profile-kicker">Flutter App / Collaborative Editor</p>
+      <h3><a href="https://github.com/ZayaMK/Cleanera">Cleanera</a></h3>
+      <p>청소 시설의 평면도와 구역, 오브젝트를 편집하고 팀 단위로 동기화하는 Flutter 기반 에디터 프로젝트입니다. headless editor engine, snapshot+delta undo/redo, offline-first 저장, Supabase Realtime 동기화 구조를 다룹니다.</p>
+      <div class="profile-chip-group">
+        <span class="profile-chip">Flutter</span>
+        <span class="profile-chip">Dart</span>
+        <span class="profile-chip">Riverpod</span>
+        <span class="profile-chip">Drift</span>
+        <span class="profile-chip">Supabase Realtime</span>
       </div>
     </article>
   </div>
@@ -217,12 +282,15 @@ order: 1
         <span class="profile-chip">WebFlux</span>
         <span class="profile-chip">Kafka</span>
         <span class="profile-chip">Hexagonal</span>
+        <span class="profile-chip">JPA</span>
+        <span class="profile-chip">Flyway</span>
         <span class="profile-chip">PostgreSQL</span>
         <span class="profile-chip">Docker</span>
         <span class="profile-chip">Prometheus</span>
         <span class="profile-chip">Next.js</span>
         <span class="profile-chip">React</span>
         <span class="profile-chip">TypeScript</span>
+        <span class="profile-chip">Flutter</span>
         <span class="profile-chip">Python</span>
         <span class="profile-chip">OpenAI API</span>
         <span class="profile-chip">Claude API</span>
