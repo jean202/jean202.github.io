@@ -13,7 +13,7 @@ order: 1
   <div class="profile-hero">
     <p class="profile-kicker">Java Backend Engineer</p>
     <h2 class="profile-heading">김진하</h2>
-    <p class="profile-summary">Java와 Spring 기반 백엔드 개발을 중심으로 일해 왔습니다. 인증, 권한, 데이터 처리, API 설계처럼 서비스의 핵심 흐름을 다루는 일을 주로 했고, 최근에는 그 기반 위에서 AI, 데이터 분석, UI/UX, 인프라, 마케팅까지 제품을 이루는 다양한 층위로 관심을 넓혀 가고 있습니다. 이 페이지에는 그 흐름이 보이도록 프로젝트와 경험을 함께 정리했습니다.</p>
+    <p class="profile-summary">Java와 Spring 기반 백엔드 개발을 중심으로 일해 왔습니다. 인증, 권한, 데이터 처리, API 설계처럼 서비스 안쪽에서 돌아가는 로직을 다루는 일이 많았습니다. 최근에는 백엔드를 기반으로 AI 기능, 분석 화면, 운영 도구처럼 실제 사용자가 만나는 부분까지 조금씩 넓혀 보고 있습니다. 이 페이지에는 그동안 만든 프로젝트와 경력을 함께 정리했습니다.</p>
     <div class="profile-actions">
       <a class="profile-button" href="mailto:anowheretogo@naver.com">Email</a>
       <a class="profile-button profile-button--ghost" href="https://github.com/jean202">GitHub</a>
@@ -22,37 +22,37 @@ order: 1
 </section>
 
 <section class="profile-section">
-  <h2>주로 해온 방향</h2>
+  <h2>추구하는 방향</h2>
   <div class="profile-grid profile-grid--three">
     <article class="profile-card profile-card--accent">
-      <h3>백엔드 구조를 중심에 둡니다</h3>
-      <p>Spring Boot, WebFlux, Kafka, SDK 설계, 헥사고날 아키텍처, 멀티모듈처럼 구조와 데이터 흐름을 먼저 단단하게 만드는 작업을 중심에 두고 있습니다.</p>
+      <h3>백엔드 설계를 많이 다뤘습니다</h3>
+      <p>Spring Boot, WebFlux, Kafka, SDK 설계, 헥사고날 아키텍처, 멀티모듈처럼 서비스가 오래 유지되기 위한 구조를 고민해 왔습니다.</p>
     </article>
     <article class="profile-card">
-      <h3>문서와 구현을 함께 남깁니다</h3>
-      <p>코드만 남기기보다 API 명세, 화면 스펙, 기술 결정 문서, README까지 함께 정리해 설계에서 구현까지 이어지는 흐름이 보이도록 남기는 편입니다.</p>
+      <h3>문서도 같이 정리합니다</h3>
+      <p>API 명세, 화면 스펙, 기술 결정 문서, README를 함께 남겨서 나중에 다시 봐도 왜 그렇게 만들었는지 알 수 있게 하려 합니다.</p>
     </article>
     <article class="profile-card">
-      <h3>제품을 이루는 주변 영역까지 확장합니다</h3>
-      <p>백엔드를 중심으로 두되, 필요한 곳에서는 AI 기능, 분석 화면, 랜딩 페이지, 운영 도구, 자동화 파이프라인까지 연결해 실제 사용 흐름이 닫히는 형태를 지향합니다.</p>
+      <h3>필요하면 제품 쪽도 같이 봅니다</h3>
+      <p>백엔드가 중심이지만 AI 기능, 분석 화면, 랜딩 페이지, 운영 도구, 자동화 파이프라인처럼 사용자가 실제로 만나는 부분도 함께 만들어 봅니다.</p>
     </article>
   </div>
 </section>
 
 <section class="profile-section">
-  <h2>이 포트폴리오의 흐름</h2>
+  <h2>프로젝트 선택 기준</h2>
   <div class="profile-grid profile-grid--three">
     <article class="profile-card profile-card--accent">
-      <h3>백엔드 정체성</h3>
-      <p><strong>card-mizer</strong>, <strong>asset-radar</strong>, <strong>slotops</strong>를 중심으로 도메인 모델링, 이벤트 흐름, 운영형 API, 예약/리소스 관리 같은 백엔드 역량을 선명하게 보여주고자 합니다.</p>
+      <h3>백엔드 기본기</h3>
+      <p><strong>card-mizer</strong>, <strong>asset-radar</strong>, <strong>slotops</strong>는 도메인 모델링, 이벤트 처리, 운영 API, 예약/리소스 관리처럼 백엔드에서 자주 부딪히는 문제를 다룬 프로젝트입니다.</p>
     </article>
     <article class="profile-card">
-      <h3>현장 문제와 운영 관점</h3>
-      <p><strong>booking-reservation-sync-monitor</strong>는 실제 호텔 현장에서 관찰한 OTA/PMS 동기화 지연 문제를 백엔드 시스템으로 모델링한 프로젝트입니다. API 설계가 실제 운영 리스크를 어떻게 줄이는지 보여주는 축입니다.</p>
+      <h3>현장에서 본 문제</h3>
+      <p><strong>booking-reservation-sync-monitor</strong>는 호텔 근무 중 봤던 OTA/PMS 동기화 지연을 백엔드 시스템으로 풀어 본 프로젝트입니다. 예약 누락이나 배정 지연처럼 운영에서 바로 문제가 되는 상황을 줄이는 데 초점을 맞췄습니다.</p>
     </article>
     <article class="profile-card">
-      <h3>AI와 제품 확장</h3>
-      <p><strong>ThreadKeeper</strong>와 <strong>SignalMate</strong>는 AI를 단순 호출 기능이 아니라 작업 흐름, 사용자 판단, 분석 경험으로 연결하려는 시도입니다. 제품 문제 정의와 구현을 함께 다룹니다.</p>
+      <h3>AI를 붙여 본 제품</h3>
+      <p><strong>ThreadKeeper</strong>와 <strong>SignalMate</strong>는 AI 호출 자체보다 사용자가 판단하거나 다음 행동을 정하는 과정에 AI를 어떻게 넣을 수 있을지 실험한 프로젝트입니다.</p>
     </article>
   </div>
 </section>
