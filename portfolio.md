@@ -43,15 +43,15 @@ order: 1
   <h2>프로젝트 선택 기준</h2>
   <div class="profile-grid profile-grid--three">
     <article class="profile-card profile-card--accent">
-      <h3>백엔드 기본기</h3>
+      <h3>백엔드</h3>
       <p><strong>card-mizer</strong>, <strong>asset-radar</strong>, <strong>slotops</strong>는 도메인 모델링, 이벤트 처리, 운영 API, 예약/리소스 관리처럼 백엔드에서 자주 부딪히는 문제를 다룬 프로젝트입니다.</p>
     </article>
     <article class="profile-card">
-      <h3>현장에서 본 문제</h3>
+      <h3>직접 겪은 문제</h3>
       <p><strong>booking-reservation-sync-monitor</strong>는 호텔 근무 중 봤던 OTA/PMS 동기화 지연을 백엔드 시스템으로 풀어 본 프로젝트입니다. 예약 누락이나 배정 지연처럼 운영에서 바로 문제가 되는 상황을 줄이는 데 초점을 맞췄습니다.</p>
     </article>
     <article class="profile-card">
-      <h3>AI를 붙여 본 제품</h3>
+      <h3>AI 활용</h3>
       <p><strong>ThreadKeeper</strong>와 <strong>SignalMate</strong>는 AI 호출 자체보다 사용자가 판단하거나 다음 행동을 정하는 과정에 AI를 어떻게 넣을 수 있을지 실험한 프로젝트입니다.</p>
     </article>
   </div>
