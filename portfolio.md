@@ -22,7 +22,7 @@ order: 1
 </section>
 
 <section class="profile-section">
-  <h2>추구하는 방향</h2>
+  <h2>지향점</h2>
   <div class="profile-grid profile-grid--three">
     <article class="profile-card profile-card--accent">
       <h3>백엔드 설계</h3>
