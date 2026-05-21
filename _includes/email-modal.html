@@ -1,0 +1,258 @@
+<div class="email-modal" id="emailModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="emailModalTitle">
+  <div class="email-modal__backdrop" data-email-modal-close></div>
+  <div class="email-modal__panel" role="document">
+    <div class="email-modal__header">
+      <h2 id="emailModalTitle" class="email-modal__title">메일 보내기</h2>
+      <button type="button" class="email-modal__close" aria-label="닫기" data-email-modal-close>&times;</button>
+    </div>
+    <p class="email-modal__address"><code id="emailModalAddress"></code></p>
+    <p class="email-modal__hint">사용할 메일 서비스를 선택하세요. 일부 서비스는 받는사람 자동 입력이 지원되지 않습니다.</p>
+    <ul class="email-modal__list">
+      <li><a class="email-modal__option" data-service="gmail" href="#" rel="noopener noreferrer" target="_blank">Gmail (웹)</a></li>
+      <li><a class="email-modal__option" data-service="outlook" href="#" rel="noopener noreferrer" target="_blank">Outlook (웹)</a></li>
+      <li><a class="email-modal__option" data-service="yahoo" href="#" rel="noopener noreferrer" target="_blank">Yahoo Mail (웹)</a></li>
+      <li><a class="email-modal__option" data-service="naver" href="#" rel="noopener noreferrer" target="_blank">Naver 메일 (웹) <span class="email-modal__note">자동입력 미지원</span></a></li>
+      <li><a class="email-modal__option" data-service="daum" href="#" rel="noopener noreferrer" target="_blank">Daum 메일 (웹) <span class="email-modal__note">자동입력 미지원</span></a></li>
+      <li><a class="email-modal__option" data-service="default" href="#">기본 메일 앱 <span class="email-modal__note">OS 메일 앱 등록 시</span></a></li>
+      <li><button type="button" class="email-modal__option email-modal__option--copy" data-service="copy">주소 복사</button></li>
+    </ul>
+    <p class="email-modal__feedback" id="emailModalFeedback" aria-live="polite"></p>
+  </div>
+</div>
+
+<style>
+  .email-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .email-modal.is-open { display: flex; }
+  .email-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(31, 24, 54, 0.55);
+  }
+  .email-modal__panel {
+    position: relative;
+    width: 100%;
+    max-width: 22rem;
+    background: #fff;
+    border-radius: 1.1rem;
+    padding: 1.4rem 1.4rem 1.2rem;
+    box-shadow: 0 30px 80px rgba(43, 29, 83, 0.28);
+  }
+  .email-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+  }
+  .email-modal__title {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--brand-ink, #1f1836);
+  }
+  .email-modal__close {
+    background: transparent;
+    border: 0;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: rgba(31, 24, 54, 0.55);
+    cursor: pointer;
+    padding: 0 0.2rem;
+  }
+  .email-modal__close:hover { color: var(--brand-ink, #1f1836); }
+  .email-modal__address {
+    font-size: 0.92rem;
+    margin: 0.3rem 0 0.55rem;
+    color: var(--brand-accent, #7b7eff);
+    font-weight: 600;
+    word-break: break-all;
+  }
+  .email-modal__hint {
+    font-size: 0.82rem;
+    color: rgba(31, 24, 54, 0.65);
+    margin: 0 0 0.85rem;
+    line-height: 1.45;
+  }
+  .email-modal__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.35rem;
+  }
+  .email-modal__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--border-soft, rgba(57, 41, 105, 0.12));
+    border-radius: 0.7rem;
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--brand-ink, #1f1836);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+  }
+  .email-modal__option:hover {
+    border-color: rgba(123, 126, 255, 0.32);
+    color: var(--brand-accent, #7b7eff);
+    text-decoration: none;
+  }
+  .email-modal__option:focus-visible {
+    outline: 2px solid var(--brand-accent, #7b7eff);
+    outline-offset: 2px;
+  }
+  .email-modal__note {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: rgba(31, 24, 54, 0.5);
+    margin-left: 0.6rem;
+  }
+  .email-modal__feedback {
+    min-height: 1.2rem;
+    margin: 0.7rem 0 0;
+    font-size: 0.82rem;
+    color: var(--brand-accent, #7b7eff);
+    font-weight: 600;
+  }
+  body.email-modal-open { overflow: hidden; }
+  @media (max-width: 480px) {
+    .email-modal__panel { padding: 1.2rem 1.1rem 1.05rem; }
+    .email-modal__title { font-size: 1rem; }
+  }
+</style>
+
+<script>
+  (function () {
+    var modal = document.getElementById('emailModal');
+    if (!modal) return;
+
+    var addressEl = document.getElementById('emailModalAddress');
+    var feedbackEl = document.getElementById('emailModalFeedback');
+    var lastFocus = null;
+    var currentEmail = '';
+
+    function buildUrl(service, email) {
+      var enc = encodeURIComponent(email);
+      switch (service) {
+        case 'gmail':   return 'https://mail.google.com/mail/?view=cm&fs=1&to=' + enc;
+        case 'outlook': return 'https://outlook.live.com/mail/0/deeplink/compose?to=' + enc;
+        case 'yahoo':   return 'https://compose.mail.yahoo.com/?to=' + enc;
+        case 'naver':   return 'https://mail.naver.com/';
+        case 'daum':    return 'https://mail.daum.net/';
+        // 'default' (기본 메일 앱) is handled separately: openModal() writes
+        // the mailto: href onto its anchor and we let the click navigate naturally.
+        default:        return null;
+      }
+    }
+
+    function openModal(email) {
+      currentEmail = email;
+      addressEl.textContent = email;
+      feedbackEl.textContent = '';
+
+      // Set the "default mail app" anchor href to the real mailto: URL so the
+      // browser triggers the OS handler from a genuine anchor click (more
+      // reliable than location.href assignment, which Chrome can block).
+      var defaultLink = modal.querySelector('[data-service="default"]');
+      if (defaultLink) defaultLink.setAttribute('href', 'mailto:' + email);
+
+      lastFocus = document.activeElement;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('email-modal-open');
+      var firstOpt = modal.querySelector('.email-modal__option');
+      if (firstOpt) firstOpt.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('email-modal-open');
+      feedbackEl.textContent = '';
+      if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+    }
+
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        feedbackEl.textContent = '주소가 복사되었습니다: ' + text;
+      } catch (err) {
+        feedbackEl.textContent = '복사 실패. 직접 복사해주세요: ' + text;
+      }
+      document.body.removeChild(ta);
+    }
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest) return;
+      // Skip clicks that originate inside the modal — those are handled by the
+      // modal's own listener (and the "기본 메일 앱" anchor must be allowed to
+      // navigate naturally to its mailto: href).
+      if (e.target.closest('.email-modal')) return;
+      var a = e.target.closest('a[href^="mailto:"]');
+      if (!a) return;
+      e.preventDefault();
+      var raw = a.getAttribute('href').replace(/^mailto:/i, '');
+      var email = decodeURIComponent(raw.split('?')[0]);
+      openModal(email);
+    });
+
+    modal.addEventListener('click', function (e) {
+      if (e.target.closest('[data-email-modal-close]')) {
+        closeModal();
+        return;
+      }
+      var opt = e.target.closest('.email-modal__option');
+      if (!opt) return;
+      var service = opt.getAttribute('data-service');
+      if (service === 'copy') {
+        e.preventDefault();
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(currentEmail).then(
+            function () { feedbackEl.textContent = '주소가 복사되었습니다: ' + currentEmail; },
+            function () { fallbackCopy(currentEmail); }
+          );
+        } else {
+          fallbackCopy(currentEmail);
+        }
+        return;
+      }
+      if (service === 'default') {
+        // Don't preventDefault — let the anchor's mailto: href trigger the
+        // OS-level handler (Mail.app, Outlook desktop, Windows Mail, etc.).
+        // The href was set by openModal() when the modal opened.
+        closeModal();
+        return;
+      }
+      var url = buildUrl(service, currentEmail);
+      if (!url) return;
+      e.preventDefault();
+      window.open(url, '_blank', 'noopener,noreferrer');
+      closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  })();
+</script>
