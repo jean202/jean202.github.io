@@ -151,8 +151,8 @@
         case 'yahoo':   return 'https://compose.mail.yahoo.com/?to=' + enc;
         case 'naver':   return 'https://mail.naver.com/';
         case 'daum':    return 'https://mail.daum.net/';
-        // 'default' (기본 메일 앱) is handled separately: openModal() writes
-        // the mailto: href onto its anchor and we let the click navigate naturally.
+        /* 'default' (기본 메일 앱) is handled separately: openModal() writes
+           the mailto: href onto its anchor and we let the click navigate naturally. */
         default:        return null;
       }
     }
@@ -162,9 +162,9 @@
       addressEl.textContent = email;
       feedbackEl.textContent = '';
 
-      // Set the "default mail app" anchor href to the real mailto: URL so the
-      // browser triggers the OS handler from a genuine anchor click (more
-      // reliable than location.href assignment, which Chrome can block).
+      /* Set the "default mail app" anchor href to the real mailto: URL so the
+         browser triggers the OS handler from a genuine anchor click (more
+         reliable than location.href assignment, which Chrome can block). */
       var defaultLink = modal.querySelector('[data-service="default"]');
       if (defaultLink) defaultLink.setAttribute('href', 'mailto:' + email);
 
@@ -203,9 +203,9 @@
 
     document.addEventListener('click', function (e) {
       if (!e.target.closest) return;
-      // Skip clicks that originate inside the modal — those are handled by the
-      // modal's own listener (and the "기본 메일 앱" anchor must be allowed to
-      // navigate naturally to its mailto: href).
+      /* Skip clicks that originate inside the modal — those are handled by the
+         modal's own listener (and the "기본 메일 앱" anchor must be allowed to
+         navigate naturally to its mailto: href). */
       if (e.target.closest('.email-modal')) return;
       var a = e.target.closest('a[href^="mailto:"]');
       if (!a) return;
@@ -236,9 +236,9 @@
         return;
       }
       if (service === 'default') {
-        // Don't preventDefault — let the anchor's mailto: href trigger the
-        // OS-level handler (Mail.app, Outlook desktop, Windows Mail, etc.).
-        // The href was set by openModal() when the modal opened.
+        /* Don't preventDefault — let the anchor's mailto: href trigger the
+           OS-level handler (Mail.app, Outlook desktop, Windows Mail, etc.).
+           The href was set by openModal() when the modal opened. */
         closeModal();
         return;
       }
