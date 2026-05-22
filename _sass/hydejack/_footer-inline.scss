@@ -1,19 +1,22 @@
 main > footer {
   width:100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   padding: 0 1rem;
   color: $gray;
   font-size: smaller;
   text-align: center;
 
+  /* Pin to bottom of main only on desktop widths (>= 54em).
+     At narrow widths the redesigned footer (identity + stacked links + copyright)
+     is taller than .content's padding-bottom, so absolute positioning made it
+     overlap the last content section. Letting it flow normally fixes that. */
+  @media screen and (min-width: 54em) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
   > p {
     margin-bottom: 0;
   }
-
-  // a::after {
-  //   display: none;
-  // }
 }
