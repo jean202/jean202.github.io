@@ -865,4 +865,10 @@ input[type="checkbox"]:checked ~ ul{
     width: 100%;
     justify-content: center;
   }
+
+  /* Center the footer identity block (name / role / summary) above the
+     full-width stacked buttons so the visual axis lines up. */
+  .site-footer__identity {
+    text-align: center;
+  }
 }

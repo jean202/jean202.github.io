@@ -50,8 +50,8 @@ google_analytics:    G-xxxx
 disqus: True
 disqus_shortname:    xxxx
 
-# This text will appear in the footer of every page. Markdown enabled.
-copyright:           '&copy; 2021.1. by jean202'
+# Copyright는 _includes/footer.html에서 동적으로 생성합니다.
+# (© 2021–{현재 연도} jean202 — 현재 연도는 Jekyll 빌드 시점 자동 반영)
 
 # Format of the permalinks
 permalink:           

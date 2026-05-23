@@ -27,9 +27,7 @@
     </div>
   </div>
   <div class="site-footer__meta">
-    {% if site.copyright.size > 0 %}
-    <span>{{ site.copyright | markdownify | strip_html }}</span>
-    {% endif %}
+    <span>&copy; 2021&ndash;{{ site.time | date: '%Y' }} jean202</span>
     <span>Built with Jekyll and a custom Hydejack theme.</span>
   </div>
 </footer>
