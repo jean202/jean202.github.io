@@ -859,6 +859,14 @@ input[type="checkbox"]:checked ~ ul{
     align-items: stretch;
   }
 
+  /* Center the wrapped flex children themselves at narrow widths. Without
+     this, .site-footer__identity (max-width: 28rem) gets pushed to the
+     start of its row by justify-content: space-between, making the text
+     look left-aligned even with text-align: center applied. */
+  .site-footer__inner {
+    justify-content: center;
+  }
+
   .site-footer__links a,
   .profile-button,
   .sidebar-action {
