@@ -372,6 +372,11 @@ input[type="checkbox"]:checked ~ ul{
   border-radius: 1.4rem;
   border: 1px solid rgba(255, 255, 255, 0.24);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.24);
+  /* Force the source image to cover the full square. Some upstream theme
+     rules (or user agents) can leave the rendered image shorter than the
+     declared height, which made the bottom half show as page background. */
+  object-fit: cover;
+  object-position: center;
 }
 
 .sidebar-about--brand h1 {
