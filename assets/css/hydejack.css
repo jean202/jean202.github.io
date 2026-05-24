@@ -366,17 +366,19 @@ input[type="checkbox"]:checked ~ ul{
 }
 
 .sidebar-box--profile .me {
-  width: 5.6rem;
-  height: 5.6rem;
+  /* !important + explicit aspect-ratio is required: an upstream theme rule
+     leaves the rendered image at roughly half the declared height (showing
+     page background as a "white bottom half"). Inline-style testing with
+     these exact !important values fills the box correctly. */
+  width: 5.6rem !important;
+  height: 5.6rem !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: center !important;
   margin: 0;
   border-radius: 1.4rem;
   border: 1px solid rgba(255, 255, 255, 0.24);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.24);
-  /* Force the source image to cover the full square. Some upstream theme
-     rules (or user agents) can leave the rendered image shorter than the
-     declared height, which made the bottom half show as page background. */
-  object-fit: cover;
-  object-position: center;
 }
 
 .sidebar-about--brand h1 {
