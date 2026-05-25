@@ -676,6 +676,18 @@ input[type="checkbox"]:checked ~ ul{
   margin-bottom: 2.8rem;
 }
 
+.profile-avatar {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  margin: 0 0 1.35rem;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 28px rgba(43, 29, 83, 0.18);
+}
+
 .profile-hero {
   padding: 2rem;
   border-radius: 1.6rem;

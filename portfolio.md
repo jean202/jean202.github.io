@@ -11,6 +11,7 @@ order: 1
 
 <section class="profile-section profile-section--intro">
   <div class="profile-hero">
+    <img class="profile-avatar" src="/assets/img/me.jpg" alt="김진하" />
     <p class="profile-kicker">Java Backend Engineer</p>
     <h2 class="profile-heading">김진하</h2>
     <p class="profile-summary">Java와 Spring 기반 백엔드 개발을 중심으로 일해 왔습니다. 인증, 권한, 데이터 처리, API 설계처럼 서비스 안쪽에서 돌아가는 로직을 다루는 일이 많았습니다. 최근에는 백엔드를 기반으로 AI 기능, 분석 화면, 운영 도구처럼 실제 사용자가 만나는 부분까지 조금씩 넓혀 보고 있습니다. 이 페이지에는 그동안 만든 프로젝트와 경력을 함께 정리했습니다.</p>
