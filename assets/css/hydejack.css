@@ -360,25 +360,40 @@ input[type="checkbox"]:checked ~ ul{
 }
 
 .sidebar-box--profile {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 1.05rem;
-}
-
-.sidebar-box--profile .me {
-  /* !important + explicit aspect-ratio is required: an upstream theme rule
-     leaves the rendered image at roughly half the declared height (showing
-     page background as a "white bottom half"). Inline-style testing with
-     these exact !important values fills the box correctly. */
-  width: 5.6rem !important;
-  height: 5.6rem !important;
-  aspect-ratio: 1 / 1 !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  margin: 0;
+  /* Render the profile photo as a CSS background on the box itself.
+     The previous approach (object-fit: cover on the inner <img class="me">)
+     stopped working in a way DevTools couldn't explain: the element's
+     bounding rect was 89.59 × 89.59, computed object-fit was 'cover',
+     computed aspect-ratio was '1 / 1', yet only the top half rendered
+     the image content with the bottom half showing as page background.
+     Moving rendering to a background-image on the parent uses a simpler
+     paint path and works reliably. */
+  display: block;
+  width: 5.6rem;
+  height: 5.6rem;
+  margin: 0 0 1.05rem;
+  background-image: url('/assets/img/me.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 1.4rem;
   border: 1px solid rgba(255, 255, 255, 0.24);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.24);
+}
+
+.sidebar-box--profile .me {
+  /* The inner <img> is no longer rendered visually; the parent's
+     background-image takes over. Hide visually but keep accessible to
+     screen readers (same pattern the theme uses for .sr-only) so the
+     alt="Jinha Kim" remains announced. */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .sidebar-about--brand h1 {
