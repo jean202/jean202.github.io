@@ -361,14 +361,18 @@ input[type="checkbox"]:checked ~ ul{
 
 .sidebar-box--profile {
   /* Render the profile photo as a CSS background on the box itself.
-     The previous approach (object-fit: cover on the inner <img class="me">)
-     stopped working in a way DevTools couldn't explain: the element's
-     bounding rect was 89.59 × 89.59, computed object-fit was 'cover',
-     computed aspect-ratio was '1 / 1', yet only the top half rendered
-     the image content with the bottom half showing as page background.
-     Moving rendering to a background-image on the parent uses a simpler
-     paint path and works reliably. */
+     Confirmed via a JS test (moving the box to position:fixed renders the
+     full image correctly) that some ancestor in the Hydejack drawer/sidebar
+     chain clips the box's paint area to roughly the top half — DevTools
+     reports the box's rect as the full 89.59 × 89.59 and no ancestor has
+     clip-path/mask/overflow:hidden, yet the bottom half doesn't paint.
+     Forcing a new compositing layer + isolated stacking context with
+     translateZ + isolation gets the box out of whatever ancestor paint
+     context is doing the clipping. */
   display: block;
+  position: relative;
+  isolation: isolate;
+  transform: translateZ(0);
   width: 5.6rem;
   height: 5.6rem;
   margin: 0 0 1.05rem;
