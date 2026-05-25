@@ -2,4 +2,22 @@
   <h2>Comments</h2>
   <hr/>
 
+  {% if site.giscus and site.giscus.repo %}
+  <script src="https://giscus.app/client.js"
+          data-repo="{{ site.giscus.repo }}"
+          data-repo-id="{{ site.giscus.repo_id }}"
+          data-category="{{ site.giscus.category | default: 'General' }}"
+          data-category-id="{{ site.giscus.category_id }}"
+          data-mapping="{{ site.giscus.mapping | default: 'pathname' }}"
+          data-strict="{{ site.giscus.strict | default: '0' }}"
+          data-reactions-enabled="{{ site.giscus.reactions_enabled | default: '1' }}"
+          data-emit-metadata="{{ site.giscus.emit_metadata | default: '0' }}"
+          data-input-position="{{ site.giscus.input_position | default: 'top' }}"
+          data-theme="{{ site.giscus.theme | default: 'preferred_color_scheme' }}"
+          data-lang="{{ site.giscus.lang | default: 'ko' }}"
+          data-loading="{{ site.giscus.loading | default: 'lazy' }}"
+          crossorigin="anonymous"
+          async>
+  </script>
+  {% endif %}
 </aside>

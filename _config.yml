@@ -46,9 +46,21 @@ google_fonts:        Lato
 # To remove Google Anaylics from your page, remove the line below.
 google_analytics:    G-xxxx
 
-# 댓글기능
-disqus: True
-disqus_shortname:    xxxx
+# 댓글 기능 (Giscus — GitHub Discussions 기반)
+# https://giscus.app 에서 발급받은 값을 사용. 댓글은 post 레이아웃에서만 노출됨.
+giscus:
+  repo:                jean202/jean202.github.io
+  repo_id:             MDEwOlJlcG9zaXRvcnkzMzE1MjkxMzM=
+  category:            General
+  category_id:         DIC_kwDOE8K7rc4C9kwM
+  mapping:             pathname
+  strict:              0
+  reactions_enabled:   1
+  emit_metadata:       0
+  input_position:      top
+  theme:               preferred_color_scheme
+  lang:                ko
+  loading:             lazy
 
 # Copyright는 _includes/footer.html에서 동적으로 생성합니다.
 # (© 2021–{현재 연도} jean202 — 현재 연도는 Jekyll 빌드 시점 자동 반영)
