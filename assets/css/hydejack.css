@@ -870,6 +870,27 @@ input[type="checkbox"]:checked ~ ul{
   }
 }
 
+@media (max-width: 53.99em) {
+  /* Hide the sidebar drawer and the hamburger trigger at narrow widths.
+     The drawer's content (profile photo, name, role, summary, navigation)
+     is already covered by the hero card on the Portfolio page plus the
+     footer's Portfolio/About/GitHub/Email/RSS links, so the drawer was
+     mostly noise on mobile — and the sidebar's profile photo was getting
+     paint-clipped to its top half inside the drawer regardless of how
+     we styled it. Cleaner to just remove the drawer entirely on mobile
+     and rely on the hero + footer for everything. The sidebar stays
+     intact on desktop (>= 54em) where it's the primary navigation. */
+  #_yDrawer {
+    display: none;
+  }
+  .navbar.fixed-top {
+    display: none;
+  }
+  .content {
+    padding-top: 1.5rem;
+  }
+}
+
 @media (max-width: 700px) {
   .site-sidebar {
     padding-top: 1rem;
