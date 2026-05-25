@@ -1,30 +1,8 @@
 # Project: jean202.github.io Portfolio
 
-## 🚀 Next Session Priority (2026-04-25 KST 이후)
+## 🚀 Next Session Priority
 
-**Giscus 댓글 시스템 설정** ← 이걸 먼저 하세요!
-
-사용자가 내일(2026-04-25 토요일) 세션을 열면, 다른 작업보다 이것을 우선으로 진행:
-
-### Giscus 4단계 설정
-
-1. **GitHub repo 설정** - Discussions 활성화
-   - Settings → Features → Discussions ✅
-
-2. **Giscus 앱 권한** - giscus.app에서 repo 연결
-   - [giscus.app](https://giscus.app) 접속
-   - jean202/jean202.github.io 입력 및 인증
-
-3. **설정값 생성** - script 코드 복사
-   - Category: General
-   - Theme: Preferred color scheme
-   - Enable reactions: ✅
-
-4. **Jekyll 적용** - _config.yml에 giscus 섹션 추가
-   - script 코드에서 repo_id, category_id 추출
-   - _config.yml 작성
-
-**예상 시간:** 20분
+특별히 정해진 우선순위 없음. 아래 "향후 계획" 중 끌리는 것 진행하면 됨.
 
 ---
 
@@ -34,6 +12,13 @@
 ✅ tech / project-log 카테고리 추가
 ✅ A타입 기술 블로그 포스트 2개 (OSIV+HikariCP, WebFlux+R2DBC)
 ✅ B타입 프로젝트 로그 6개 (asset-radar, card-mizer, SignalMate, blog-to-shorts, Session Pilot, discord-kakao-translator)
+✅ **Giscus 댓글 시스템** (post 레이아웃에서만, 한국어 UI, GitHub Discussions 기반)
+✅ **Email 선택 모달** (Gmail/Outlook/Yahoo/Naver/Daum/기본 메일 앱/주소 복사 — `mailto:` 클릭 시 사이트 전역에서 작동)
+✅ **푸터 개편** (반응형, 자동 갱신 copyright `© 2021–{현재연도} jean202`, 모바일 가운데 정렬)
+✅ **Favicon 멀티사이즈** (16/32/48/64 + apple-touch-icon 180×180)
+✅ **모바일 UX 단순화** (사이드바 drawer + 햄버거 메뉴 숨김, 페이지 콘텐츠 + 푸터로 깔끔하게)
+✅ **Portfolio hero 프로필 사진** (96×96 정사각형, 메인 페이지에 항상 표시)
+✅ **Hydejack JS `global` polyfill** (테마 JS가 정상 초기화되어 데스크톱 사이드바 정상 작동)
 
 ---
 
