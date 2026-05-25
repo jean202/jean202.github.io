@@ -372,7 +372,7 @@ input[type="checkbox"]:checked ~ ul{
   width: 5.6rem;
   height: 5.6rem;
   margin: 0 0 1.05rem;
-  background-image: url('/assets/img/me.jpg');
+  background-image: url('/assets/img/me.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
