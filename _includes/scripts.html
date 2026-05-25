@@ -30,6 +30,16 @@
 
 {% unless page.redirect %}
   <!--[if gt IE 9]><!---->
+  {% comment %}
+    hydejack.js was bundled expecting a Node-style `global` to exist; in a
+    browser there's only `window`/`globalThis`, so without this polyfill it
+    throws "Uncaught ReferenceError: global is not defined" at load and the
+    rest of the file (drawer init, sidebar layout setup, etc.) never runs.
+    That broken init seems to be why the profile box was getting paint-
+    clipped to its top half. Polyfilling before the script loads lets the
+    theme initialize cleanly.
+  {% endcomment %}
+  <script>window.global = window.global || window;</script>
   {% capture js_url %}{% link assets/js/hydejack.js %}?v=6.4.0{% endcapture %}
   <script>loadJSDeferred('{{ js_url | relative_url }}');</script>
 
